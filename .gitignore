@@ -34,4 +34,4 @@ override.tf.json
 terraform.rc
 
 #Ignore files in c9 directory
-.c9/*
+.c9/
