@@ -43,13 +43,21 @@ resource "aws_instance" "k8s" {
     project = "clo835"
   }
 
-  key_name                = "week5"
+  key_name                = "assignment2"
   monitoring              = true
   disable_api_termination = false
   ebs_optimized           = true
 }
 
 resource "aws_key_pair" "k8s" {
-  key_name   = "week5"
-  public_key = file("${path.module}/week5.pub")
+  key_name   = "assignment2"
+  public_key = file("${path.module}/assignment2.pub")
+}
+
+resource "aws_ecr_repository" "webapp_images" {
+  name = "webapp-images"
+}
+
+resource "aws_ecr_repository" "sqldb_images" {
+  name = "sqldb-images"
 }
